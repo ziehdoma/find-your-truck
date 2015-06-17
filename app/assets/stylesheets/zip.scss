@@ -1,3 +1,52 @@
 // Place all the styles related to the zip controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// .homepage{
+// 	background-image : url("truckpic.jpg");
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// }
+
+//homepage
+.homepage{
+	background-image: url("pic2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment:fixed;
+}
+.header{
+	font-size: 70px;
+	color: #83a8d4;
+	margin-left: 300px;	
+}
+
+
+.zipcode{
+	margin-left: 500px;
+  	margin-top: 200px;
+  	height: 100px;
+  	opacity: .60;
+
+}
+
+.whitespace{
+	height: 30px;
+	margin-top: 20px;
+	border-top: 2px solid black;
+}
+
+//indexpage
+
+.listofvendors{
+	float: right;
+	color: #f57180;
+	font-family: cursive;
+	background-color: #dddddd;
+	background-widht: 60px;
+	margin-right: 40px;
+	padding: 8px;
+
+}
+
