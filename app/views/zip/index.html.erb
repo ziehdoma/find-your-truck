@@ -1,0 +1,19 @@
+<div class="listoftheater">
+	
+<!-- 	
+	<% for i in (0..5) %>
+    <p><%= @response[i]["obj"]["name"]%></p>
+    <% end %> -->
+
+    <% @response.each do |response| %>
+    <p><%= response["obj"]["name"] %></p>
+    <p><%= response["obj"]["last_seen"]["address"] %></p>
+    
+
+    	<% end %>
+
+
+
+</div>
+
+
