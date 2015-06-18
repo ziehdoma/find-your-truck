@@ -1,0 +1,37 @@
+<div class="header">
+  Find Your Food Truck
+  </div>
+    <div class="whitespace"></div>
+
+<div class="listofvendors">
+   <% @response.each do |response| %>
+    <p><%= response["obj"]["name"] %></p>
+    <p><%= response["obj"]["last_seen"]["address"] %></p>
+  
+    <% response["obj"]["last_seen"]["latitude"] %>
+    <% response["obj"]["last_seen"]["longitude"] %>
+    	<% end %>
+
+</div>
+
+
+<div>
+  <div style='width: 800px;'>
+    <div id="map" style='width: 600px; height: 400px;'></div>
+  </div>
+</div>
+
+<script>
+
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%= raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+
+</script>
+</body>
+
+
+
