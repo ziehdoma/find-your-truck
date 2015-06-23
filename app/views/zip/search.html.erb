@@ -1,37 +1,67 @@
-<div class="header">
-  Find Your Food Truck
-  </div>
-    <div class="whitespace"></div>
 
-<div class="listofvendors">
+<body class="searchpage">
+    
+<div class="whitespace"></div>
+
+<div class="listofvendors"> 
+  <h3>click below </h3>
    <% @response.each do |response| %>
-    <p><%= response["obj"]["name"] %></p>
-    <p><%= response["obj"]["last_seen"]["address"] %></p>
-  
+    <% @lat = response["obj"]["last_seen"]["latitude"] %>
+    <% @lng = response["obj"]["last_seen"]["longitude"] %>
+    <% @name = response['obj']['name'] %>
+
+    <p onclick="addMarker(<%= @lat %>, <%= @lng %>)"><%= response["obj"]["name"]%></p>  
+    <p><% response["obj"]["last_seen"]["address"] %></p> 
     <% response["obj"]["last_seen"]["latitude"] %>
     <% response["obj"]["last_seen"]["longitude"] %>
-    	<% end %>
-
+	<% end %>
 </div>
 
 
-<div>
-  <div style='width: 800px;'>
-    <div id="map" style='width: 600px; height: 400px;'></div>
+
+<div id="map-canvas">
+  <div style='width: 400px;'>
+    <div id="map" style='width: 300px; height: 300px;'></div>
   </div>
 </div>
+ 
 
 <script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%= raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
+    markers = handler.addMarkers(<%= raw @hash.to_json %>); 
+    handler.bounds.extendWith(markers);   
+    handler.fitMapToBounds();
+
+  });
+
+</script>
+
+<script>
+  
+  function addMarker(lat, lng) {
+  
+  handler.buildMap({ 
+    provider: {
+    center:new google.maps.LatLng(lat,lng),
+    zoom:16
+  }, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": lat,
+        "lng": lng,
+      }
+    ]);
+    //handler.bounds.extendWith(markers);
+    //handler.fitMapToBounds();
+  });
+   
+  };
 
 </script>
 </body>
+
 
 
 

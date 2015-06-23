@@ -9,44 +9,68 @@
 // 	background-size: cover;
 // }
 
-//homepage
-.homepage{
-	background-image: url("pic2.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment:fixed;
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url('pic2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    h1{
+    	color: #f57180;
+
+    }
 }
-.header{
-	font-size: 70px;
-	color: #83a8d4;
-	margin-left: 300px;	
+
+.zip {
+	text-align: center;
+	font-size: 20px;
+	font-family: cursive;
+}
+.submit{
+	font-size: 10px;
 }
 
 
-.zipcode{
-	margin-left: 500px;
-  	margin-top: 200px;
-  	height: 100px;
-  	opacity: .60;
 
+
+.box {
+    margin-top: 200px;
+    padding: 20px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.6);
 }
 
-.whitespace{
-	height: 30px;
-	margin-top: 20px;
-	border-top: 2px solid black;
-}
+
+
 
 //indexpage
-
+.searchpage{
+	background: url('pic4.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 .listofvendors{
 	float: right;
-	color: #f57180;
+	color: black;
 	font-family: cursive;
-	background-color: #dddddd;
-	background-widht: 60px;
-	margin-right: 40px;
+	font-weight: 15px;
+	margin-right: 200px;
 	padding: 8px;
+
+}
+
+
+.whitespace{
+	margin-top: 70px;
+	border-top: 4px solid black;
+}
+#map-canvas{ 
+	margin-top: 15px;
+	margin-left: 100px;
+	border-right: 1px solid black;
 
 }
 
