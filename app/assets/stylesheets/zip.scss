@@ -9,6 +9,9 @@
 // 	background-size: cover;
 // }
 
+
+
+
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('pic2.jpg') no-repeat center center fixed;
@@ -27,50 +30,109 @@ body {
 	font-size: 20px;
 	font-family: cursive;
 }
-.submit{
-	font-size: 10px;
-}
-
-
-
 
 .box {
     margin-top: 200px;
     padding: 20px 15px;
-    background: #fff;
     background: rgba(255,255,255,0.6);
 }
 
 
 
 
-//indexpage
+//searchpage
+
+
+.header{
+	height: 100px;
+	background-image: url("food2.png");
+	background-repeat: no-repeat;
+	opacity: .6;
+	text-align: right;
+	font-family: cursive;
+	border-top: 20px;
+	font-size: 50px;
+	color: #c35a7b;
+
+
+	// background-color: #f57180;
+	
+
+}
+
+h3{
+	text-decoration: underline;
+}
+
 .searchpage{
-	background: url('pic4.jpg') no-repeat center center fixed;
+	background: url('picw.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
+
 .listofvendors{
-	float: right;
 	color: black;
 	font-family: cursive;
-	font-weight: 15px;
-	margin-right: 200px;
-	padding: 8px;
-
+	font-size: 14px;
+	border-left: 1px solid #f57180;
+	padding-left: 10px;	
+	background-color: rgba(229,229,216, 0.6);
+	border-radius: 10px;
 }
 
+.sideline{ 
+	border-right: 1px solid green
+}
 
 .whitespace{
-	margin-top: 70px;
-	border-top: 4px solid black;
+	border-top: 2px solid black;
 }
-#map-canvas{ 
-	margin-top: 15px;
-	margin-left: 100px;
-	border-right: 1px solid black;
 
+#map-canvas{ 
+	margin-top: 5px;
+	margin-left: 30px;
+	margin-bottom: 5px;
+
+}
+
+p:hover{
+	background-color: #f57180;
+}
+
+#map {
+	width: 700px;
+	height: 500px;
+	border: solid black 1px;
+}
+
+.endbar{
+	border-top: 2px solid black;
+}
+
+
+@media all and (max-width: 480px) 
+{
+	
+	.header{ 
+		background-image: none;
+		font-size: 30px;
+		text-align: center;
+		height: 50px;
+	}
+
+
+	#map { 
+		
+		width: 350px;
+		height: 250px;
+		margin-left: 0px;
+		border-top: 30px;	
+	}
+
+    .listofvendors{
+    	margin-left: 40px;
+    }
 }
 

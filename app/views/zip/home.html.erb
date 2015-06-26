@@ -8,15 +8,16 @@
               	<div id="zipcode">
 				 <%= form_tag(results_path, method: :get) do %>
 				    <h1> Find Your Truck </h1>
-					<p>
+					
 						<%=  text_field_tag :zipcode, nil, placeholder:  "zipcode", class: "zip" %>
-					</p>
-					<p>
-						<%= submit_tag 'Enter', class: "submit" %>
-					</p>
+					<br>
+					
+						<%= submit_tag 'Enter', class: "btn btn-success" %>
+					
 					<% end %>
 				</div>
 			 </h2>
          </hr>        
      </div>
 </div>
+

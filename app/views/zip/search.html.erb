@@ -1,31 +1,51 @@
 
 <body class="searchpage">
-    
-<div class="whitespace"></div>
-
-<div class="listofvendors"> 
-  <h3>click below </h3>
-   <% @response.each do |response| %>
-    <% @lat = response["obj"]["last_seen"]["latitude"] %>
-    <% @lng = response["obj"]["last_seen"]["longitude"] %>
-    <% @name = response['obj']['name'] %>
-
-    <p onclick="addMarker(<%= @lat %>, <%= @lng %>)"><%= response["obj"]["name"]%></p>  
-    <p><% response["obj"]["last_seen"]["address"] %></p> 
-    <% response["obj"]["last_seen"]["latitude"] %>
-    <% response["obj"]["last_seen"]["longitude"] %>
-	<% end %>
+<div class="header"> Find Your Truck </div>
+<div class="whitespace">
 </div>
 
-
-
-<div id="map-canvas">
-  <div style='width: 400px;'>
-    <div id="map" style='width: 300px; height: 300px;'></div>
+<!-- creating map -->
+<!-- <div class="container"> -->
+<div class="row">
+  <div class="col-md-8">
+    <div id="map-canvas">
+    <div style='width: 400px;'>
+    <div id="map">
+    </div>
   </div>
 </div>
- 
+</div>
 
+  
+
+
+<!-- list of truck -->
+
+  <div class="col-md-4">
+    <div class="listofvendors"> 
+      <h3> click below </h3>
+        <% @response.each do |response| %>
+          <% @lat = response["obj"]["last_seen"]["latitude"] %>
+          <% @lng = response["obj"]["last_seen"]["longitude"] %>
+          <% @name = response['obj']['name'] %>
+
+
+          <p class="namecuisine" onclick="addMarker(<%= @lat %>, <%= @lng %>)"><%= response["obj"]["name"]%> 
+         ( <%= response["obj"]["cuisine"][0] %> )</p>
+         <p class="time"> <!-- Last seen:  -->
+          <% Time.at response["obj"]["last_seen"]["timestamp"]["sec"]%> </p>
+          <p><% response["obj"]["last_seen"]["address"] %></p> 
+          
+  	   <% end %>
+    </div>
+  </div>
+  
+</div>
+<div class="endbar">
+  </div>
+
+
+<!-- building all the makers on the map with the lat and lng retrieved from the truck api-->
 <script>
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -38,10 +58,10 @@
 
 </script>
 
+<!-- triggering onclick which is added on the list of vendors class (response name). On clicking the name, the map zooms out.  -->
 <script>
   
-  function addMarker(lat, lng) {
-  
+  function addMarker(lat, lng) { 
   handler.buildMap({ 
     provider: {
     center:new google.maps.LatLng(lat,lng),
@@ -53,10 +73,7 @@
         "lng": lng,
       }
     ]);
-    //handler.bounds.extendWith(markers);
-    //handler.fitMapToBounds();
-  });
-   
+  });  
   };
 
 </script>
