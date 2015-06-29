@@ -20,8 +20,7 @@ body {
     background-size: cover;
     -o-background-size: cover;
     h1{
-    	color: #f57180;
-
+    	color: #073605;
     }
 }
 
@@ -36,9 +35,14 @@ body {
     padding: 20px 15px;
     background: rgba(255,255,255,0.6);
 }
-
-
-
+.modal-title{
+	color: #d06014;
+ }
+ .modal-body{
+ 	color: #d06014;
+ 	font-size: 20px;
+ 	font-family: times;
+ }
 
 //searchpage
 
@@ -49,10 +53,12 @@ body {
 	background-repeat: no-repeat;
 	opacity: .6;
 	text-align: right;
-	font-family: cursive;
+	font-family: times;
 	border-top: 20px;
-	font-size: 50px;
-	color: #c35a7b;
+	font-size: 40px;
+	color: #073605;
+	padding-top: 45px;
+	padding-right: 20px;
 
 
 	// background-color: #f57180;
@@ -73,13 +79,17 @@ h3{
 }
 
 .listofvendors{
-	color: black;
-	font-family: cursive;
+	color: #c35a7b;
 	font-size: 14px;
-	border-left: 1px solid #f57180;
+	// border-left: 1px solid #f57180;
 	padding-left: 10px;	
-	background-color: rgba(229,229,216, 0.6);
-	border-radius: 10px;
+	background-color: rgba(255,255,255, 0.8);
+	border-radius: 8px;
+	margin-top: 40px;
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: times;
 }
 
 .sideline{ 
@@ -98,11 +108,11 @@ h3{
 }
 
 p:hover{
-	background-color: #f57180;
+	background-color: black;
 }
 
 #map {
-	width: 700px;
+	width: 1100px;
 	height: 500px;
 	border: solid black 1px;
 }

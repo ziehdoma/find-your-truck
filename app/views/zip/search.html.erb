@@ -21,7 +21,7 @@
 
 <!-- list of truck -->
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="listofvendors"> 
       <h3> click below </h3>
         <% @response.each do |response| %>
@@ -30,9 +30,9 @@
           <% @name = response['obj']['name'] %>
 
 
-          <p class="namecuisine" onclick="addMarker(<%= @lat %>, <%= @lng %>)"><%= response["obj"]["name"]%> 
-         ( <%= response["obj"]["cuisine"][0] %> )</p>
-         <p class="time"> <!-- Last seen:  -->
+          <p onclick="addMarker(<%= @lat %>, <%= @lng %>)"><%= response["obj"]["name"]%> 
+          ( <%= response["obj"]["cuisine"][0] %> )</p>
+          <p class="time"> <!-- Last seen:  -->
           <% Time.at response["obj"]["last_seen"]["timestamp"]["sec"]%> </p>
           <p><% response["obj"]["last_seen"]["address"] %></p> 
           
