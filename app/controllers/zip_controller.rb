@@ -17,10 +17,6 @@ class ZipController < ApplicationController
     end
   end
 
-
- 
-
-
   def results
   	redirect_to search_path(params[:zipcode])
   end

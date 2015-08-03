@@ -1,0 +1,9 @@
+
+<main>
+  <heart>
+    <span class='heartL'></span>
+    <span class='heartR'></span>
+    <span class='square'></span>
+  </heart>
+  <shadow></shadow>
+</main>
